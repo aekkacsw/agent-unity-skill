@@ -27,7 +27,7 @@ Simply clone this repository into the root of your Unity project. The AI agents 
 
 ```bash
 cd YourUnityProject
-git clone [https://github.com/Common-ka/ai-agent-unity-rules.git](https://github.com/Common-ka/ai-agent-unity-rules.git) .
+git clone https://github.com/Common-ka/ai-agent-unity-rules.git
 
 ```
 
