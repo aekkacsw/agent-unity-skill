@@ -1,36 +1,67 @@
-[![Release](https://img.shields.io/github/v/release/Common-ka/cursor-unity-rules)](https://github.com/Common-ka/cursor-unity-rules/releases)
+Без проблем. Вот полный код файла `README.md` в сыром виде. Просто скопируйте его целиком и вставьте в свой файл.
+
+[![Release](https://img.shields.io/github/v/release/Common-ka/ai-agent-unity-rules)](https://github.com/Common-ka/ai-agent-unity-rules/releases)
+
+# Unity AI Agent Rules (Cursor + Antigravity)
 
 ## 📋 Description
 
-Production-ready `.cursor/rules` configuration for Unity 6.2+ projects. Modern AI rules system for Cursor IDE (2025) using the new `.mdc` format instead of the deprecated `.cursorrules`.
+**The Single Source of Truth for Unity AI assistance.**
+
+This repository provides production-ready configuration rules for Unity 6.2+ projects. It is designed to be **universal**, automatically supporting both:
+1.  **Cursor IDE** (via native `.mdc` format)
+2.  **Google Antigravity** (via synced `.agent/rules` format)
+
+We use a "write once, deploy everywhere" approach: rules are defined in Cursor's format and automatically converted for Antigravity Workspace using a custom CI/CD workflow.
 
 ## 🚀 Quick Start
 
 ### Requirements
 
 - Unity 6.2 or higher
-- Cursor IDE
+- **IDE:** Cursor IDE *OR* Google Antigravity Workspace
 - .NET SDK for C# development
 
 ### Installation
 
-1. Clone the repository into your Unity project root:
+#### Option A: Automatic Setup (Recommended)
+Simply clone this repository into the root of your Unity project. The AI agents will automatically detect their respective configuration folders.
 
-```
+```bash
 cd YourUnityProject
-git clone https://github.com/Common-ka/cursor-unity-rules.git
-```
-2. Or manually copy the `.cursor/` folder to your project root
+git clone [https://github.com/Common-ka/ai-agent-unity-rules.git](https://github.com/Common-ka/ai-agent-unity-rules.git) .
 
-3. Copy `.vscode/settings.json` to your project:
 ```
-cp cursor-unity-rules/.vscode/settings.json YourUnityProject/.vscode/
-```
-4. Open your project in Cursor IDE
 
-5. Rules will automatically apply when working with code
+#### Option B: Manual Setup
+
+**For Cursor Users:**
+
+1. Copy the `.cursor/` folder to your project root.
+2. Copy `.vscode/settings.json` to your project's `.vscode/` folder.
+
+**For Antigravity Users:**
+
+1. Copy the `.agent/` folder to your project root.
+2. Ensure `.agent/rules/` contains the `.md` files.
+
+---
+
+## 🛠 How it Works (Sync Workflow)
+
+This repository uses a **Uni-Directional Data Flow** to keep rules in sync.
+
+```mermaid
+graph LR
+    A[.cursor/rules/*.mdc] -- python script --> B(.agent/rules/*.md)
+
+```
+
+1. **Source:** Rules are authored in `.cursor/rules/` using the modern `.mdc` format.
+2. **Sync:** A Python script (`sync_rules.py`) automatically converts these files into standard Markdown for Antigravity.
+3. **Automation:** A GitHub Action runs on every push to ensure `.agent/rules` are always up to date.
+
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE)
-
+MIT License - see [LICENSE](https://www.google.com/search?q=LICENSE)
