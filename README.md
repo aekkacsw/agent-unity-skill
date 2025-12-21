@@ -1,5 +1,3 @@
-Без проблем. Вот полный код файла `README.md` в сыром виде. Просто скопируйте его целиком и вставьте в свой файл.
-
 [![Release](https://img.shields.io/github/v/release/Common-ka/ai-agent-unity-rules)](https://github.com/Common-ka/ai-agent-unity-rules/releases)
 
 # Unity AI Agent Rules (Cursor + Antigravity)
